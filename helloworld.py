@@ -23,16 +23,16 @@ def english2pyg(original) :
         #print original
         word = original.lower()
         #select letters of word by treating string as an array of char
-        first = original[0] 
+        first = word[0] 
         #concatenate strings
-        new_word = original[1:len(original)] + first + pyg 
+        new_word = word[1:len(word)] + first + pyg 
         print (new_word)
     else:
         print ('empty')
     return new_word
 
+def main() :
+    english2pyg("test")
+    return ('The End.')
 
-def main()
-    english2pyg("ciccio")
-return ('The End.')
-
+main()
