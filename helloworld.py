@@ -1,10 +1,10 @@
 #importing modules and libs
-from math import *
+import math
 from datetime import datetime
 import os.path, time
 
 ##############################
-def english2pyg(original) :
+def english2pyg(original):
     """Translates a word in English into Pyg Latin"""
     pyg = 'ay'
     new_word = 'empty'
@@ -21,25 +21,45 @@ def english2pyg(original) :
         print ('empty')
     return new_word
 
-##############################
 def power(base, exponent):  
     """Power function"""
     result = base ** exponent
     print ("%d to the power of %d is %d." % (base, exponent, result))
 
-def main() :
+def biggest_number(*args):
+  print (max(args))
+  return max(args)
+    
+def smallest_number(*args):
+  print (min(args))
+  return min(args)
+
+def distance_from_zero(arg):
+  print (abs(arg))
+  return abs(arg)
+
+def print_math_module():
+    everything = dir(math) # Sets everything to a list of things from math
+    print (everything) # Prints 'em all!
+
+##############################
+def main(doprint) :
     """Main function"""
-    english2pyg("test")
+    now = datetime.now()
+    #current_year = now.year
+    #current_month = now.month
+    #current_day = now.day
+    print("MY PYTHON TUTORIAL")
+    print("Created: %s" % time.ctime(os.path.getmtime("/Users/fbellini/projects/pythontutorial/helloworld.py")))
+    print ('Last update: ', now.strftime('%d %B %Y %H:%M:%S'))
+    #12-hour format #print(now.strftime# ('%Y/%m/%d %I:%M:%S')) 
+    if doprint==True :
+        english2pyg("test")
+        print_math_module() 
+    biggest_number(-10, -5, 5, 10)
+    smallest_number(-10, -5, 5, 10)
+    distance_from_zero(-10)
     return ('The End.')
 
 ##############################
-now = datetime.now()
-current_year = now.year
-current_month = now.month
-current_day = now.day
-
-print("Created: %s" % time.ctime(os.path.getmtime("/Users/fbellini/projects/pythontutorial/helloworld.py")))
-print ('Last update: ', now.strftime('%d %B %Y %H:%M:%S'))
-#12-hour format
-#print(now.strftime# ('%Y/%m/%d %I:%M:%S')) 
-main()
+main(True)
