@@ -1,21 +1,11 @@
+#importing modules and libs
+from math import *
 from datetime import datetime
 import os.path, time
 
-now = datetime.now()
-current_year = now.year
-current_month = now.month
-current_day = now.day
-
-print("Created: %s" % time.ctime(os.path.getmtime("/Users/fbellini/projects/pythontutorial/helloworld.py")))
-print ('Last update: ', now.strftime('%d %B %Y %H:%M:%S'))
-#24-hour format
-#print(now.strftime('%Y/%m/%d %H:%M:%S'))
-#12-hour format
-#print(now.strftime# ('%Y/%m/%d %I:%M:%S')) 
-
-
-#define function English to Pyg Latin translator
+##############################
 def english2pyg(original) :
+    """Translates a word in English into Pyg Latin"""
     pyg = 'ay'
     new_word = 'empty'
     #original = raw_input('Enter a word:')
@@ -31,8 +21,25 @@ def english2pyg(original) :
         print ('empty')
     return new_word
 
+##############################
+def power(base, exponent):  
+    """Power function"""
+    result = base ** exponent
+    print ("%d to the power of %d is %d." % (base, exponent, result))
+
 def main() :
+    """Main function"""
     english2pyg("test")
     return ('The End.')
 
+##############################
+now = datetime.now()
+current_year = now.year
+current_month = now.month
+current_day = now.day
+
+print("Created: %s" % time.ctime(os.path.getmtime("/Users/fbellini/projects/pythontutorial/helloworld.py")))
+print ('Last update: ', now.strftime('%d %B %Y %H:%M:%S'))
+#12-hour format
+#print(now.strftime# ('%Y/%m/%d %I:%M:%S')) 
 main()
